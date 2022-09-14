@@ -31,9 +31,9 @@ jobs:
           BRANCH: ${{ env.REPO_BRANCH }}
           PKG: speedtest-cpp
 
-      - name: Release and Upload Assets
-        uses: softprops/action-gh-release@v1
+      - name: Save Build Result
+        uses: actions/upload-artifact@v2
         with:
-          files: "*.ipk"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: ipk
+          path: |
+            *.ipk
