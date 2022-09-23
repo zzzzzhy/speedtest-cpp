@@ -14,7 +14,6 @@ jobs:
         arch:
           - ipq_ipq40xx-qsdk11
           - ath79-1907
-          - mvebu-1907
           - ramips-1907
 
     steps:
