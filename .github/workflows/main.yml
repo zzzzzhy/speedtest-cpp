@@ -12,10 +12,10 @@ jobs:
       fail-fast: false
       matrix:
         arch:
-          - mips_24kc
-          - mipsel_24kc
-          - mvebu-cortexa53
-          - x86_64
+          - ipq_ipq40xx-qsdk11
+          - ath79-1907
+          - mvebu-1907
+          - ramips-1907
         version: [19.07.7]
 
     steps:
@@ -25,7 +25,7 @@ jobs:
         uses: innet8/gh-action-sdk@master
         env:
           ARCH: ${{ matrix.arch }}-${{ matrix.version }}
-          MODE: open
+          MODE: glinet
           DEPENDENCES: libcurl libxml2 libopenssl libstdcpp
           ADDR: ${{ env.REPO_URL }}
           BRANCH: ${{ env.REPO_BRANCH }}
@@ -36,4 +36,4 @@ jobs:
         with:
           name: ipk
           path: |
-            *.ipk
+            speedtest*.ipk
